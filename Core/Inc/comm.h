@@ -18,18 +18,44 @@ typedef enum
 {
     Init, //初始化
     Idle, //等待接收
-    Process, //帧内容处理
+    Parse, //帧内容处理
+    Process, //帧信息处理
     Ack, //回复
     Error //信息错误
 } STATE_MACHINE_TYPE;
 
+//状态机枚举
+typedef enum
+{
+    NONE,
+    FUN,
+    CCR,
+    DATA,
+} Error_Type;
+
+
+typedef enum
+{
+    EN = 1,
+    VREF = 2,
+    IREF = 3,
+} Fun_Type;
+
+typedef enum
+{
+    VOUT,
+    IOUT,
+    ERROR_TYPE,
+    RUN_MODE,
+    OUT_MODE,
+} Report_Type;
 
 //一帧数据的相关结构体
 typedef struct _frame_structure
 {
-    __IO int16_t TxFunctionCode; //功能码
-    __IO int16_t TxValue; //接收数值
-    __IO int16_t TxCheckValue; //校验值
+    __IO int16_t FunctionCode; //功能码
+    __IO int16_t Value; //接收数值
+    __IO int16_t CheckValue; //校验值
 } Frame_Structure;
 
 
