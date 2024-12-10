@@ -27,28 +27,43 @@ typedef enum
 //状态机枚举
 typedef enum
 {
-    NONE,
-    FUN,
-    CCR,
-    DATA,
-} Error_Type;
+    NONE = 0,
+    FUN = 1,
+    CCR = 2,
+    DATA = 3,
+} STATE_MACHINE_ERROR_TYPE;
 
 
 typedef enum
 {
-    EN = 1,
-    VREF = 2,
-    IREF = 3,
-} Fun_Type;
+    EN = 0,
+    VREF = 1,
+    IREF = 2,
+} FUN_TYPE;
 
 typedef enum
 {
-    VOUT,
-    IOUT,
-    ERROR_TYPE,
-    RUN_MODE,
-    OUT_MODE,
-} Report_Type;
+    VIN = 0,
+    IIN = 1,
+    VOUT = 2,
+    IOUT = 3,
+    RUN_ERROR_TYPE = 4,
+    RUN_MODE = 5,
+    OUT_MODE = 6,
+} REPORT_TYPE;
+
+typedef enum
+{
+    BUCK = 0,
+    BOOST = 1,
+    MIXED = 2,
+} RUN_MODE_TYPE;
+
+typedef enum
+{
+    CC = 0,
+    CV = 1
+} OUT_MODE_TYPE;
 
 //一帧数据的相关结构体
 typedef struct _frame_structure
