@@ -20,7 +20,6 @@ typedef enum
     Idle, //等待接收
     Parse, //帧内容处理
     Process, //帧信息处理
-    Ack, //回复
     Error //信息错误
 } STATE_MACHINE_TYPE;
 
@@ -36,9 +35,10 @@ typedef enum
 
 typedef enum
 {
-    EN = 0,
+    EN_ = 0,
     VREF = 1,
     IREF = 2,
+    OUT_MODE_ = 3,
 } FUN_TYPE;
 
 typedef enum
@@ -50,6 +50,7 @@ typedef enum
     RUN_ERROR_TYPE = 4,
     RUN_MODE = 5,
     OUT_MODE = 6,
+    EN = 7,
 } REPORT_TYPE;
 
 typedef enum
